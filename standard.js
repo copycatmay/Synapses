@@ -10,12 +10,21 @@ $(document).ready(function(){
       updateReferencesTextColor(); // Call this function after toggling the class
     });
 
+    // Smooth scrolling for inLinks
+    $('a.inLinks').click(function(e) {
+        e.preventDefault(); // Prevent the default anchor behavior
+        var target = $(this).attr('href'); // Get the target element's id
+        $('html, body').animate({
+            scrollTop: $(target).offset().top // Scroll to the target element
+        }, 1000); // Duration of the scroll animation in milliseconds
+    });
+
     // Function to increase spacing
     function increaseSpacing() {
       $('.latLong').each(function(i) {
         // Increase the bottom margin for each .latLong element
         // The multiplier (i + 1) ensures that the margin increases for each element
-        $(this).css('margin-bottom', (i + 1) * 120 + 'px');
+        $(this).css('margin-bottom', (i + 1) * 150 + 'px');
       });
     }
 
