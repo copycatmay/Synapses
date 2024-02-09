@@ -2,6 +2,8 @@ $(document).ready(function(){
     // Existing click event
 
     $(".latLong").click(function(){
+        
+
         // Remove previously added classes
         $(".recentlyClickedLatLong").removeClass("recentlyClickedLatLong");
         $(".recentlyClickedpID").removeClass("recentlyClickedpID");
@@ -17,6 +19,16 @@ $(document).ready(function(){
         
         $(this).toggleClass("clicked");
         $(this).closest('.flex-container').find(".image img").toggle(); // Updated line
+
+        var zoomLevel = $('.latLong.clicked').length > 0 ? 6 : 2; // Zoom level 10 if any element is opened, else 13
+
+        // New logic to change map location
+        var lat = parseFloat($(this).find('h2').eq(0).text());
+        var lng = parseFloat($(this).find('h2').eq(1).text());
+
+        if(!isNaN(lat) && !isNaN(lng)) {
+            map.setView([lat, lng], zoomLevel);
+        } 
 
         updateReferencesTextColor(); // Call this function after toggling the class
     });
@@ -38,5 +50,13 @@ $(document).ready(function(){
       $('.relevantInfo').toggle(!hasBlackBox); // Hide or show .relavant-info
     }
 
+    // Initialize Leaflet Map
+    var map = L.map('mapid').setView([51.505, -0.09], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 6,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
   });
+
 

@@ -182,3 +182,13 @@ h2 {
 .recentlyClickedpID {
     border: 6px solid yellow; 
 }
+
+#mapid {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 750px; 
+    height: 900px; 
+    z-index: -1; 
+    filter: grayscale(100%) blur(3px);
+}
