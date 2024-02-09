@@ -1,15 +1,14 @@
 #title {
-    font-size: 30px;
+    font-size: 2em;
 }
 
-.header {
+.main {
     font-family: 'Inter', sans-serif;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 30%; /* or any other desired width */
+    width: 30%; 
 }
-
 
 .latLong{
     color: #000;
@@ -19,25 +18,24 @@
     line-height: normal;
     transition: all 0.5s ease;
 
-    margin-top: 50px;
-    margin-bottom: 50px;
-
     display: inline-block;
+    margin-bottom: 5em;
 }
 
 .latLong:hover {
     background-color: grey;
     padding: 20px;
     margin-top: 100px;
-    margin-bottom: 100px;
 }
 
 .latLong:hover h2 {
     color: white;
-    font-size: 128px; /* Adjust font size as needed */
+    font-size: 3em;
     text-decoration: underline;
     transition: font-size 0.5s ease;
-    
+    transition: letter-spacing 0.5s ease;
+
+    letter-spacing: -2px;
 }
 
 .coord-img{
@@ -50,19 +48,20 @@
     padding-top: 100%;
     padding-right: 950px;
 
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: 20px;
-
+    margin-top: 10px;
+    margin-bottom: 0em;
     display: flex;
 }
 
 .latLong.clicked h2 {
     color: white;
-    font-size: 40px; /* Adjust font size as needed */
-    transition: font-size 0.5s ease;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    font-size: 0.6em; /* Adjust font size as needed */
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    
+    letter-spacing: -4px;
+    font-weight: lighter;
 }
 
 .sticky {
@@ -101,6 +100,9 @@
 h2 {
     margin-top: 0;
     margin-bottom: 0;
+
+    letter-spacing: 4px;
+    font-family: "peridot-pe-variable", sans-serif;
 }
 
 #references p {
@@ -111,17 +113,24 @@ h2 {
 
 /* Image styling */
 .img1 {
-    max-width: none;
-    height: 600px;
+    max-width: 950px;
+    height: 100%;
 }
 
 .img2 {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 950px;
+    max-height: 100%;
+    margin-bottom: 50%;
 }
 
-
 /* Metadata Styling */
+.metadata {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0px;
+    max-height: 75vh; /* Adjust based on your needs */
+    overflow: auto;
+}
 
 .metadata p{
     display: none;
@@ -132,3 +141,26 @@ h2 {
 }
 
 
+/* Timeline Styling */
+
+.side {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 20px;
+    letter-spacing: -1px;
+    display: inline-block;
+    margin-left: 5em;
+
+
+}
+
+.tick {
+    background: black;
+    padding-top: 2px;
+    margin-bottom: 19em;
+}
+
+.tickText {
+    font-size: 10px;
+    
+}
