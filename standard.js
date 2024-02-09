@@ -2,7 +2,17 @@ $(document).ready(function(){
     // Existing click event
 
     $(".latLong").click(function(){
+        // Remove previously added classes
+        $(".recentlyClickedLatLong").removeClass("recentlyClickedLatLong");
+        $(".recentlyClickedpID").removeClass("recentlyClickedpID");
+
+        // Add 'recentlyClickedLatLong' class to the clicked element
+        $(this).addClass("recentlyClickedLatLong");
+
+        // Find the corresponding <p> element and add 'recentlyClickedpID' class
         var target = $(this).data("target");
+        $("#" + target).addClass("recentlyClickedpID");
+
         $("#" + target).toggleClass("visible");
         
         $(this).toggleClass("clicked");
@@ -29,3 +39,4 @@ $(document).ready(function(){
     }
 
   });
+
