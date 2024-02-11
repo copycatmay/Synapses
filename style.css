@@ -173,6 +173,24 @@ h2 {
     
 }
 
+.rightSideBar {
+    position: fixed;
+    margin-left: 80vw;
+    margin-top: 10vh;
+}
+
+.rightSideBar h2 {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 1rem;
+    letter-spacing: -1px;
+}
+
+.rightSideBar a:visited {
+    text-decoration: none;
+    color: black;
+}
+
 /* Misc Styling */
 
 .recentlyClickedLatLong {
@@ -191,4 +209,13 @@ h2 {
     height: 900px; 
     z-index: -1; 
     filter: grayscale(100%) blur(3px);
+}
+
+#baseAnimation {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    position: fixed;
 }

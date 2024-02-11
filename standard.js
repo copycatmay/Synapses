@@ -31,6 +31,12 @@ $(document).ready(function(){
         } 
 
         updateReferencesTextColor(); // Call this function after toggling the class
+
+        // Scroll to the top of the clicked element
+        $('html, body').animate({
+            scrollTop: $(this).offset().top
+        }, 1000); // Duration of the scroll animation in milliseconds
+
     });
 
     // Smooth scrolling for inLinks

@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://use.typekit.net/zqy0msb.css">
     <title>synapses</title>
-    <link icon="img/favicon.ico" rel="icon">
+    <link rel="icon" href="img/favicon.ico">
+    <script src="p5.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -18,6 +19,10 @@
   </head>
 
   <body>
+
+    <section class="rightSideBar">
+      <a href="#coords1"><h2>time is now</h2></a>
+    </section>
 
     <section class="side" style="float: left; width: 20%;"> 
         <h3 id="t1">the present is now</h3>
@@ -308,8 +313,11 @@
     </section>
 
     <!--JQuery Script taken from GPT-4-->
-
     <script src="standard.js"></script>
+
     <div id="mapid"></div>
+
+    <!--3d.js Sine Wave sampled from the p5 Library-->
+    <script id="baseAnimation" src="3d.js"></script>
   </body>
 </html>
