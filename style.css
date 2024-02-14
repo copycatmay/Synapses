@@ -4,7 +4,7 @@
 
 .main {
     font-family: 'Inter', sans-serif;
-    margin-top: 20px;
+    margin-top: 10vh;
     margin-left: auto;
     margin-right: auto;
     width: 30%; 
@@ -25,8 +25,10 @@
 .latLong:hover {
     background-color: grey;
     padding: 20px;
-    margin-top: 100px;
-    -webkit-filter: blur(5px);
+    margin-bottom: 12rem;
+
+    filter: blur(0px) !important;
+    transition: background-color 1s ease
 }
 
 .latLong:hover h2 {
@@ -46,22 +48,24 @@
 
 .latLong.clicked {
     background-color: black;
-    padding-top: 100%;
+    padding-top: 90vh;
     padding-right: 950px;
 
     margin-top: 10px;
-    margin-bottom: 0em;
+    margin-bottom: 5em;
     display: flex;
+
+    transition: all 0.5s ease;
 }
 
 .latLong.clicked h2 {
     color: white;
     font-size: 0.6em; /* Adjust font size as needed */
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease;
     margin-bottom: 1em;
     margin-left: 1em;
     
-    letter-spacing: -4px;
+    letter-spacing: -1px;
     font-weight: lighter;
 }
 
@@ -116,6 +120,7 @@ h2 {
 }
 
 /* Image styling */
+/*
 .img1 {
     max-width: 950px;
     height: 100%;
@@ -126,10 +131,7 @@ h2 {
     max-height: 100%;
     margin-bottom: 50%;
 }
-
-.image:hover {
-    -webkit-filter: blur(5px);
-}
+*/
 
 /* Metadata Styling */
 .metadata {
@@ -191,14 +193,38 @@ h2 {
     color: black;
 }
 
+.rightSideBar a {
+    text-decoration: none;
+    color: black; 
+}
+
+.rightSideBar a:hover {
+    text-decoration: underline;
+    color: red; 
+}
+
 /* Misc Styling */
 
+.inParagraphLink {
+    transition: all 0.5s ease;
+}
+
+.inParagraphLink:hover {
+    background: white;
+    color: black;
+    padding: .2em;
+}
+
 .recentlyClickedLatLong {
-    border: 6px solid yellow; 
+    border: 6px solid red; 
 }
 
 .recentlyClickedpID {
-    border: 6px solid yellow; 
+    border: 6px solid red; 
+}
+
+.activeMap {
+    filter: none !important;
 }
 
 #mapid {
@@ -208,14 +234,33 @@ h2 {
     width: 750px; 
     height: 900px; 
     z-index: -1; 
-    filter: grayscale(100%) blur(3px);
 }
 
-#baseAnimation {
+/* #baseAnimation {
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: -2;
     position: fixed;
-}
+
+    filter: blur(10px);
+} */
+
+
+/* Coordinate Blurring */
+
+#coords1 { filter:blur(0.25px); }
+#coords2 { filter:blur(1px); }
+#coords3 { filter:blur(1.5px); }
+#coords4 { filter:blur(2px); }
+#coords5 { filter:blur(2.5px); }
+#coords6 { filter:blur(3px); }
+#coords7 { filter:blur(3.5px); }
+#coords8 { filter:blur(4px); }
+#coords9 { filter:blur(4.5px); }
+#coords10 { filter:blur(5px); }
+#coords11 { filter:blur(5.5px); }
+#coords12 { filter:blur(6px); }
+#coords13 { filter:blur(6.5px); }
+#coords14 { filter:blur(7px); }

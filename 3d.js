@@ -1,7 +1,7 @@
 var colorValue;
 
 function setup() {
-    let canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+    let canvas = createCanvas(windowWidth, 900, WEBGL);
     canvas.id('baseAnimation');
 }
   

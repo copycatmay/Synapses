@@ -2,26 +2,55 @@
 <html>
 
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://use.typekit.net/zqy0msb.css">
     <title>synapses</title>
     <link rel="icon" href="img/favicon.ico">
     <script src="p5.min.js"></script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
        crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
        crossorigin=""></script>
+
+    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+
+
+
   </head>
 
   <body>
 
     <section class="rightSideBar">
-      <a href="#coords1"><h2>time is now</h2></a>
+      <a class="inLinks" href="#coords1"><h2>2024</h2></a>
+      <a class="inLinks" href="#coords2"><h2>2023</h2></a>
+      <a class="inLinks" href="#coords2"><h2>2022</h2></a>
+      <a class="inLinks" href="#coords2"><h2>2021</h2></a>
+      <a class="inLinks" href="#coords5"><h2>2020</h2></a>
+      <a class="inLinks" href="#coords6"><h2>2019</h2></a>
+      <a class="inLinks" href="#coords7"><h2>2018</h2></a>
+      <a class="inLinks" href="#coords8"><h2>2017</h2></a>
+      <a class="inLinks" href="#coords9"><h2>2016</h2></a>
+      <a class="inLinks" href="#coords10"><h2>2015</h2></a>
+      <a class="inLinks" href="#coords11"><h2>2014</h2></a>
+      <a class="inLinks" href="#coords12"><h2>2013</h2></a>
+      <a class="inLinks" href="#coords13"><h2>2012</h2></a>
+      <a class="inLinks" href="#coords14"><h2>2011</h2></a>
+      <a class="inLinks" href="#coords15"><h2>2010</h2></a>
+      <a class="inLinks" href="#coords16"><h2>2009</h2></a>
+      <a class="inLinks" href="#coords17"><h2>2008</h2></a>
+      <a class="inLinks" href="#coords18"><h2>2007</h2></a>
+      <a class="inLinks" href="#coords19"><h2>2006</h2></a>
+      <a class="inLinks" href="#coords20"><h2>2005</h2></a>
+      <a class="inLinks" href="#coords21"><h2>2004</h2></a>
     </section>
 
     <section class="side" style="float: left; width: 20%;"> 
@@ -31,6 +60,9 @@
         <div id="t2" class="tickText">
           <p>this is text</p>
         </div>
+
+
+    <!--Ticks/ Timeline idea from Joshua Reginales-->
 
         <div class="tick"></div>
         <div class="tick"></div>
@@ -69,17 +101,14 @@
 
           <div class="metadata">
               <p id="p1">
-                <a class="inLinks" href="#coords1">JUST RIGHT BEFORE NOW</a> 
+                <a class="inLinks" href="#coords1">A MILISECOND AGO</a> 
                 <br>
                 <br>
-                The present is a fleeting moment, a convergence of past experiences and future possibilities. It is where memories are made, decisions are taken, and actions are carried out. Embrace the present, for it is the bridge between what was and what will be.
+                Just before right now I was standing outside the door to the room of the studio. The <a href="subsite/coords1.html" class="inParagraphLink">6th floor open studio</a> has been transformed from a common, unknown space to one of development, shenanigans and overall design tomfoolery.
               </p>
             
             <p id="p2">
-              <a class="inLinks" href="#coords2">AND IN THE PAST</a> 
-                <br>
-                <br>
-              In the shadowed corners of history, where the dust of ages gathers thick and silent, lie tales untold and legends forgotten. It was a time when the earth was younger, a time of myth and mystery. Kingdoms rose and fell like the breath of the gods, leaving behind only the stones of their great fortresses and the echoes of their glory. 
+                Right before open studio lies the dreaded Zig Express, sometimes a beacon of hope amongst weary students heading <a href="" class="inParagraphLink">back home</a> and sometimes a place of despair (when the other one is in maintenance).
             </p>
 
             <p id="p3">
@@ -151,164 +180,103 @@
 
       <div class="flex-container">
 
-        <div class="latLong" data-target="p1" id="coords1">
-          <h2>43.6532</h2>
-          <h2>-79.3832</h2>
+        <div class="flex-container"> <!--Studio-->
+          <div class="latLong" data-target="p1" id="coords1">
+            <h2>43.652857</h2>
+            <h2>-79.391149</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <img class="img1" src="img/topoToronto.png" class="coord-img" style="display:none;">
-          <img class="img2" src="img/torontoMap2.jpeg" class="coord-img" style="display:none;">
-        </div>
-      </div>
-
-
-
-      <div class="flex-container">
-        <div class="latLong" data-target="p2" id="coords2">
-          <h2>12.39172</h2>
-          <h2>42.59172</h2>
+        <div class="flex-container"> <!--Open Studio-->
+          <div class="latLong" data-target="p2" id="coords2">
+            <h2>43.652973</h2>
+            <h2>-79.391203</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <img class="img1" src="img/topoToronto.png" class="coord-img" style="display:none;">
-          <img class="img2" src="img/torontoMap2.jpeg" class="coord-img" style="display:none;">
-        </div>
-      </div>
-
-
-      
-      <div class="flex-container">
-        <div class="latLong" data-target="p3" id="coords3">
-          <h2>-34.0126</h2>
-          <h2>1.0291</h2>
+        <div class="flex-container"> <!--Toronto Apartment-->
+          <div class="latLong" data-target="p3" id="coords3">
+            <h2>43.658531</h2>
+            <h2>-79.395491</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords3 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" data-target="p4" id="coords4">
-          <h2>45.12345</h2>
-          <h2>-75.67890</h2>
+        <div class="flex-container"> <!--Toronto as whole-->
+          <div class="latLong" data-target="p4" id="coords4">
+            <h2>43.653225</h2>
+            <h2>-79.383186</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords4 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" data-target="p5" id="coords5">
-          <h2>23.45678</h2>
-          <h2>89.01234</h2>
+        <div class="flex-container"> <!--Vancouver as whole-->
+          <div class="latLong" data-target="p5" id="coords5">
+            <h2>49.282730</h2>
+            <h2>-123.120735</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords5 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" data-target="p6" id="coords6">
-          <h2>-34.56789</h2>
-          <h2>123.45678</h2>
+        <div class="flex-container"> <!--Richmond Home-->
+          <div class="latLong" data-target="p6" id="coords6">
+            <h2>49.142120</h2>
+            <h2>-123.123490</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords6 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" data-target="p7" id="coords7">
-          <h2>67.89012</h2>
-          <h2>-134.56789</h2>
+        <div class="flex-container"> <!--Highschool/Middleschool-->
+          <div class="latLong" data-target="p7" id="coords7">
+            <h2>49.0371055</h2>
+            <h2>-123.06791</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords7 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" data-target="p8" id="coords8">
-          <h2>-78.90123</h2>
-          <h2>145.67890</h2>
+        <div class="flex-container"> <!--Elementary-->
+          <div class="latLong" data-target="p8" id="coords8">
+            <h2>49.152234</h2>
+            <h2>-123.126022</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords8 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" id="coords9">
-          <h2>12.34567</h2>
-          <h2>-98.76543</h2>
+        <div class="flex-container"> <!--PEI Boardwalk-->
+          <div class="latLong" id="coords9">
+            <h2>46.23306</h2>
+            <h2>-63.11976</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords9 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" id="coords10">
-          <h2>0.12345</h2>
-          <h2>45.67890</h2>
+        <div class="flex-container"> <!--Sydney Opera House-->
+          <div class="latLong" id="coords10">
+            <h2>-33.85942</h2>
+            <h2>151.22162</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords10 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" id="coords11">
-          <h2>-23.45678</h2>
-          <h2>67.89012</h2>
+        <div class="flex-container"> <!--Guizhou, Guiyang-->
+          <div class="latLong" id="coords11">
+            <h2>26.54615</h2>
+            <h2>106.7957</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords11 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" id="coords12">
-          <h2>89.01234</h2>
-          <h2>-12.34567</h2>
+        <div class="flex-container"> <!--Chongqing Home-->
+          <div class="latLong" id="coords12">
+            <h2>29.500814</h2>
+            <h2>106.50713</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords12 here -->
-        </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" id="coords13">
-          <h2>34.56789</h2>
-          <h2>-56.78901</h2>
+        <div class="flex-container"> 
+          <div class="latLong" id="coords13">
+            <h2>34.56789</h2>
+            <h2>-56.78901</h2>
+          </div>
         </div>
 
-        <div class="image">
-          <!-- Add images for coords13 here -->
+        <div class="flex-container">
+          <div class="latLong" id="coords14">
+            <h2>-90.12345</h2>
+            <h2>123.45678</h2>
+          </div>
         </div>
-      </div>
-
-      <div class="flex-container">
-        <div class="latLong" id="coords14">
-          <h2>-90.12345</h2>
-          <h2>123.45678</h2>
-        </div>
-
-        <div class="image">
-          <!-- Add images for coords14 here -->
-        </div>
-      </div>
       
     </section>
 
@@ -318,6 +286,6 @@
     <div id="mapid"></div>
 
     <!--3d.js Sine Wave sampled from the p5 Library-->
-    <script id="baseAnimation" src="3d.js"></script>
+    
   </body>
 </html>

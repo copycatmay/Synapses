@@ -1,3 +1,5 @@
+// standard.js script referenced and iterated via GPT-4
+
 $(document).ready(function(){
     // Existing click event
 
@@ -16,11 +18,12 @@ $(document).ready(function(){
         $("#" + target).addClass("recentlyClickedpID");
 
         $("#" + target).toggleClass("visible");
-        
+
+        $('#mapid').toggleClass('activeMap');
         $(this).toggleClass("clicked");
         $(this).closest('.flex-container').find(".image img").toggle(); // Updated line
 
-        var zoomLevel = $('.latLong.clicked').length > 0 ? 6 : 2; // Zoom level 10 if any element is opened, else 13
+        var zoomLevel = $('.latLong.clicked').length > 0 ? Math.floor(Math.random() * (16 - 6 + 1)) + 6 : 2; //random view between 16-6; else 2
 
         // New logic to change map location
         var lat = parseFloat($(this).find('h2').eq(0).text());
@@ -42,10 +45,15 @@ $(document).ready(function(){
     // Smooth scrolling for inLinks
     $('a.inLinks').click(function(e) {
         e.preventDefault(); // Prevent the default anchor behavior
-        var target = $(this).attr('href'); // Get the target element's id
-        $('html, body').animate({
-            scrollTop: $(target).offset().top // Scroll to the target element
-        }, 1000); // Duration of the scroll animation in milliseconds
+        var targetId = $(this).attr('href'); // Get the target element's id
+        var targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Smooth scroll
+                block: 'start'      // Align to the top
+            });
+        }
     });
 
 
@@ -57,10 +65,13 @@ $(document).ready(function(){
     }
 
     // Initialize Leaflet Map
-    var map = L.map('mapid').setView([51.505, -0.09], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 6,
-        attribution: '© OpenStreetMap contributors'
+    var map = L.map('mapid', {attributionControl: false}).setView([0, 0], 2);
+    L.tileLayer.provider('Stadia.StamenTonerBackground', {
+        maxZoom: 20,
+        attribution: '© OpenStreetMap contributors',
+        scrollWheelZoom: false, 
+        zoomAnimation: true,
+        zoomAnimationThreshold: 20,
     }).addTo(map);
 
   });
