@@ -20,6 +20,9 @@
 
     display: inline-block;
     margin-bottom: 5em;
+
+    background-color: white;
+    padding: 10px;
 }
 
 .latLong:hover {
@@ -234,6 +237,12 @@ h2 {
     width: 750px; 
     height: 900px; 
     z-index: -1; 
+
+    background-color: black;
+}
+
+a:visited {
+    color: red;
 }
 
 /* #baseAnimation {

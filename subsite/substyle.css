@@ -127,8 +127,9 @@ p:hover {
 img {
     margin-top: 5vh;
     margin-bottom: 2vh;
+    margin-left: 10vw;
 
-    max-width: 100vw;
+    max-width: 20vw;
 }
 
 #mapid {
@@ -173,7 +174,7 @@ img {
 
     line-height: 1.2em;
     letter-spacing: .2;
-    margin-left: 50vw;
+    margin-left: 10vw;
 
     width: 20vw;
 
@@ -192,12 +193,20 @@ a {
 
 a:hover {
     background-color: white;
-    padding-left: 1em;
-    padding-right: 2em;
+    transition: all 0.2s ease-in;
+}
 
-    font-weight: bold;
+#topLink:hover {
+    background-color: white;
+    padding-left: 0.5em;
+    padding-right: 4em;
+
     letter-spacing: 2px;
 
     transition: all 0.2s ease-in;
 }
 
+
+img {
+    filter: contrast(100%);
+}

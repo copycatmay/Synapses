@@ -65,7 +65,7 @@ $(document).ready(function(){
     }
 
     // Initialize Leaflet Map
-    var map = L.map('mapid', {attributionControl: false}).setView([0, 0], 2);
+    var map = L.map('mapid', {attributionControl: false}).setView([0, 0], 3);
     L.tileLayer.provider('Stadia.StamenTonerBackground', {
         maxZoom: 20,
         attribution: '© OpenStreetMap contributors',

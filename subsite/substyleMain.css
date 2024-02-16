@@ -1,0 +1,278 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Reset Ends */
+
+* {
+    transition: all 0.5s ease;
+}
+
+.sticky {
+    position: fixed;
+    display: flex;
+    margin-top: 10vh;
+    margin-left: 40vw;
+
+    flex-flow: column;
+    align-content: flex-end;
+
+    max-width: 30vw;
+    z-index: 2;
+}
+
+.background {
+    background-color: black;
+    padding-right: 75vw;
+    padding-bottom: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+
+    z-index: -1;
+}
+
+.title {
+    margin-top: 4vh;
+    margin-left: auto;
+    text-align: right;
+
+
+    width: 50%;
+
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: 40px;
+
+}
+
+.latLong {
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 200;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: right;
+}
+
+p {
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 14px;
+
+    line-height: 1.2em;
+    letter-spacing: .4;
+    margin-left: 10vw;
+
+    width: 20vw;
+
+    transition: background 0.5s ease, color 0.5s ease, padding 0.5s ease;
+
+    filter:blur(5px);
+}
+
+
+p:hover {
+    background: white;
+    color: black;
+    padding: 1em;
+
+    filter:blur(0px);
+}
+
+
+
+#mapid {
+    z-index: -2;
+    top: 0;
+    left: 0;
+    
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+#year {
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: 40px;
+
+    margin-left: 10vw;
+    margin-bottom: 1vh;
+
+    margin-top: 40vh;
+    z-index: 0;
+
+    filter: blur(5px);
+    transition: all 0.5s ease;
+}
+
+#year:hover {
+    filter: blur(0px);
+}
+
+.leftFloat {
+    float: left;
+}
+
+.metadata {
+    z-index: 4;
+
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 250;
+    color: #ffffff;
+    font-size: 12px;
+
+    line-height: 1.2em;
+    letter-spacing: .2;
+    margin-left: 10vw;
+
+    width: 20vw;
+
+    text-transform: uppercase;
+
+    filter:blur(5px);
+}
+
+.metadata:hover {
+    filter:blur(0px);
+    background-color: white;
+    color: black;
+    padding: 1em;
+
+    transition: all 0.5s ease;
+}
+
+a:visited {
+    color: red;
+}
+
+a {
+    color: red;
+
+    transition: background 0.4s ease, color 0.4s ease, padding 0.4s ease, letter-spacing 0.4s ease;
+}
+
+a:hover {
+    background-color: white;
+    transition: all 0.2s ease-in;
+}
+
+#topLink:hover {
+    background-color: white;
+    padding-left: 0.5em;
+    padding-right: 4em;
+
+    letter-spacing: 2px;
+
+    transition: all 0.2s ease-in;
+}
+
+img {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    margin-left: 10vw;
+
+    max-width: 20vw;
+
+    transition: all 0.5s ease;
+
+    filter: blur(5px);
+
+}
+
+
+img:hover {
+    filter: blur(0px);
+    border: 3px dotted red;
+
+    background-color: red;
+    transition: all 0.5s ease;
+
+    max-width: 30vw;
+
+    margin-left: 0;
+    padding-left: 10vw;
+}
+
+
+#endText {
+    margin-bottom: 30vh;
+}
+
+#muteButton {
+    margin-top: 2vh;
+    width: 10vw;
+    background-color: none;
+
+    margin-left: 83%;
+
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    font-size: 12px;
+
+    width: 5vw;
+
+    text-transform: uppercase;
+}
+
+.muffled {
+    filter: blur(1px);
+}
+
+
