@@ -92,9 +92,17 @@ $(document).ready(function(){
                 audioSrc = 'subsite/audio/coords-Daniel Caeser Freudian.mp3';
                 break;
             case 'coords2':
-                audioSrc = 'subsite/audio/coords-Weeknd Beauty.mp3';
+                audioSrc = 'subsite/audio/coords-Beauty.mp3';
                 break;
-            // Add more cases as needed
+            case 'coords3':
+                audioSrc = 'subsite/audio/coords-Daniel Caesar Ocho Rios.mp3';
+                break;
+            case 'coords4':
+                audioSrc = 'subsite/audio/coords-PARTY.mp3';
+                break;
+            case 'coords5':
+                audioSrc = 'subsite/audio/coords-JUNNY.mp3';
+                break;
         }
 
         console.log("Selected audio source:", audioSrc); // Debugging line
@@ -196,12 +204,74 @@ $(document).ready(function(){
         container.animate({
             scrollTop: position
         }, 1000); // Adjust the duration (1000ms) as needed
-    });
 
+        // Determine the clicked element's id and play audio with fade-in effect
+        var targetId = targetHref.replace('#', ''); // e.g., 'coords1'
+        var muffleLevel = parseInt(targetId.replace(/[^\d]/g, ''), 10); // Extracts number, e.g., 1
+        console.log("Muffle level extracted from inLinks:", muffleLevel); // Debugging line
+        var audioSrc;
+        switch(targetId) {
+            case 'coords1':
+                audioSrc = 'subsite/audio/coords-Daniel Caeser Freudian.mp3';
+                break;
+            case 'coords2':
+                audioSrc = 'subsite/audio/coords-Beauty.mp3';
+                break;
+            case 'coords3':
+                audioSrc = 'subsite/audio/coords-Daniel Caesar Ocho Rios.mp3';
+                break;
+            case 'coords4':
+                audioSrc = 'subsite/audio/coords-PARTY.mp3';
+                break;
+            case 'coords5':
+                audioSrc = 'subsite/audio/coords-JUNNY.mp3';
+                break;
+
+        }
+
+        console.log("Selected audio source from inLinks:", audioSrc); // Debugging line
+
+        if(audioSrc) {
+            var audioElement = document.getElementById('audio1');
+            audioElement.src = audioSrc;
+
+            // Ensure the audio context is not suspended
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume().then(() => {
+                    playAudioWithFadeIn(audioElement);
+                });
+            } else {
+                playAudioWithFadeIn(audioElement);
+            }
+
+            // Adjust the muffle based on the element's position
+            muffleAudio(muffleLevel);
+        }
+
+        function playAudioWithFadeIn(audioElement) {
+            audioElement.onloadedmetadata = function() {
+                audioElement.currentTime = Math.random() * audioElement.duration;
+
+                var gainNode = audioCtx.createGain();
+                gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+                gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 1); // Fade in over 1 second
+
+                if (!audioSourceNode) {
+                    audioSourceNode = audioCtx.createMediaElementSource(audioElement);
+                }
+                audioSourceNode.disconnect(); // Disconnect first to ensure clean state
+                audioSourceNode.connect(biquadFilter); // Connect the source to the biquad filter
+                biquadFilter.connect(audioCtx.destination); // Connect the biquad filter to the destination
+                console.log("Audio source connected to biquad filter and destination from inLinks."); // Debugging line
+
+                audioElement.play().catch(e => console.error("Error playing audio:", e));
+            };
+        }
+    });
 
     // Function to update references text color
     function updateReferencesTextColor() {
-      var hasBlackBox = $('.latLong.clicked').length > 0;
+      var hasBlackBox = $('.latLong.clicked').length > 0 || $('.inLinks.clicked').length > 0;
       $('#references p').css('color', hasBlackBox ? 'white' : 'black');
       $('.relevantInfo').toggle(!hasBlackBox); // Hide or show .relavant-info
     }
