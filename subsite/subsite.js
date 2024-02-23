@@ -33,8 +33,10 @@ function unmuffleAudio() {
 function toggleMute() {
     var audio = document.getElementById('backgroundAudio');
     if (audio.muted) {
+        document.getElementById('muteButton').textContent = "mute";
         audio.muted = false;
     } else {
+        document.getElementById('muteButton').textContent = "unmute";
         audio.muted = true;
     }
 }
@@ -45,8 +47,10 @@ document.querySelectorAll('p, img, .metadata').forEach(function(element) {
     element.addEventListener('mouseleave', muffleAudio);
 });
 
+        var button = document.getElementById('muteButton');
+
         // Plays the Audio when user clicks anywhere cause most browsers dont fk w autoplay
-        document.body.addEventListener('click', function() {
+        button.addEventListener('click', function() {
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume();
             }

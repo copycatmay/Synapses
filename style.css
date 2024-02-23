@@ -105,6 +105,16 @@
     color: white;
 }
 
+.inLinks:hover {
+    color: red;
+    background-color: white;
+    padding: 2px;
+}
+
+a:visited {
+    color: white;
+}
+
 h2 {
     margin-top: 0;
     margin-bottom: 0;
@@ -145,12 +155,12 @@ h2 {
     overflow: auto;
 }
 
-.metadata p{
+.metadata div{
     display: none;
 
 }
 
-.metadata p.visible {
+.metadata div.visible {
     display: block; /* Show when .latLong is clicked */
 }
 
@@ -222,8 +232,12 @@ h2 {
     border: 6px solid red; 
 }
 
-.recentlyClickedpID {
+.recentlyClickedID {
     border: 6px solid red; 
+}
+
+.recentlyClickedID img, .recentlyClickedID p {
+    filter: blur(0px) !important;
 }
 
 .activeMap {
@@ -241,9 +255,10 @@ h2 {
     background-color: black;
 }
 
-a:visited {
+.inParagraphLink:visited {
     color: red;
 }
+
 
 /* #baseAnimation {
     top: 0;
@@ -273,3 +288,59 @@ a:visited {
 #coords12 { filter:blur(6px); }
 #coords13 { filter:blur(6.5px); }
 #coords14 { filter:blur(7px); }
+
+/* image styling */
+
+
+.baseImg {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 2vh;
+}
+
+
+.imgMeta {
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 10px !important;
+
+    line-height: 1.2em;
+
+    text-transform: uppercase;
+    text-align: right;
+
+    margin-left: 8vw;
+    margin-bottom: 2vh;
+    width: 50%;
+}
+
+.p1 img, .p1 p {
+    filter: blur(1px);
+}
+
+.p1, .p2, .p3, .p4 {
+    margin-right: 15px;
+}
+
+.p2 img, .p2 p, .p3 img, .p3 p, .p4 img, .p4 p {
+    filter: blur(2px);
+}
+
+a.titleLink {
+    filter: blur(0px) !important;
+}
+
+#blackBar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background-color: black;
+}
+
+
+/* make these guys more and more blurry as it goes on */

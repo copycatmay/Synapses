@@ -275,4 +275,12 @@ img:hover {
     filter: blur(1px);
 }
 
+#muteButton:hover {
+    background-color: white;
+    color: red;
+    padding: 0.2em;
+
+    transition: all 0.5s ease;
+}
+
 
