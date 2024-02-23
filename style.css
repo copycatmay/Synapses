@@ -315,12 +315,12 @@ h2 {
     width: 50%;
 }
 
-.p1 img, .p1 p {
-    filter: blur(1px);
+.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10 {
+    margin-right: 15px;
 }
 
-.p1, .p2, .p3, .p4 {
-    margin-right: 15px;
+.p1 img, .p1 p {
+    filter: blur(1px);
 }
 
 .p2 img, .p2 p, .p3 img, .p3 p, .p4 img, .p4 p {
@@ -329,6 +329,10 @@ h2 {
 
 .p5 img, .p5 p, .p6 img, .p6 p, .p7 img, .p7 p {
     filter: blur(4px);
+}
+
+.p8 img, .p8 p, .p9 img, .p9 p, .p10 img, .p10 p {
+    filter: blur(8px);
 }
 
 a.titleLink {

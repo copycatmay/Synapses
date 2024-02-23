@@ -103,6 +103,24 @@ $(document).ready(function(){
             case 'coords5':
                 audioSrc = 'subsite/audio/coords-JUNNY.mp3';
                 break;
+            case 'coords6':
+                audioSrc = 'subsite/audio/coords-POWFU.mp3';
+                break;
+                case 'coords7':
+                    audioSrc = 'subsite/audio/coords-JUNNY21.mp3';
+                    break;
+                case 'coords8':
+                    audioSrc = 'subsite/audio/coords-JB.mp3';
+                    break;
+                case 'coords9':
+                    audioSrc = 'subsite/audio/coords-POWFU.mp3';
+                    break;
+                case 'coords10':
+                    audioSrc = 'subsite/audio/coords-FLUME.mp3';
+                    break;
+                case 'coords11':
+                    audioSrc = 'subsite/audio/coords-POWFU.mp3';
+                    break;
         }
 
         console.log("Selected audio source:", audioSrc); // Debugging line
@@ -225,6 +243,24 @@ $(document).ready(function(){
                 break;
             case 'coords5':
                 audioSrc = 'subsite/audio/coords-JUNNY.mp3';
+                break;
+             case 'coords6':
+                audioSrc = 'subsite/audio/coords-POWFU.mp3';
+                break;
+            case 'coords7':
+                audioSrc = 'subsite/audio/coords-JUNNY21.mp3';
+                break;
+            case 'coords8':
+                audioSrc = 'subsite/audio/coords-JB.mp3';
+                break;
+            case 'coords9':
+                audioSrc = 'subsite/audio/coords-POWFU.mp3';
+                break;
+            case 'coords10':
+                audioSrc = 'subsite/audio/coords-FLUME.mp3';
+                break;
+            case 'coords11':
+                audioSrc = 'subsite/audio/coords-POWFU.mp3';
                 break;
 
         }
