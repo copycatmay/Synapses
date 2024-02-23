@@ -327,6 +327,10 @@ h2 {
     filter: blur(2px);
 }
 
+.p5 img, .p5 p, .p6 img, .p6 p, .p7 img, .p7 p {
+    filter: blur(4px);
+}
+
 a.titleLink {
     filter: blur(0px) !important;
 }
