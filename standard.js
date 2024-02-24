@@ -9,12 +9,9 @@ $(document).ready(function(){
 
     function muffleAudio(muffleLevel) {
         console.log("Muffling audio with muffleLevel:", muffleLevel); // Debugging line
-        // Example calculation: Adjust these values based on your needs
-        // Assuming muffleLevel is the numeric part of the ID, e.g., 1 for "coords1"
-        var maxFrequency = 2200; // Less muffled
+        var maxFrequency = 4400; // Less muffled
         var minFrequency = 150; // More muffled
-        // Calculate the frequency based on the muffleLevel
-        var frequency = maxFrequency - ((maxFrequency - minFrequency) / 10) * (muffleLevel - 1);
+        var frequency = maxFrequency - ((maxFrequency - minFrequency) / 13) * (muffleLevel - 1);
         console.log("Calculated frequency for muffle:", frequency); // Debugging line
         biquadFilter.frequency.linearRampToValueAtTime(frequency, audioCtx.currentTime + 0.2);
     }
@@ -106,21 +103,30 @@ $(document).ready(function(){
             case 'coords6':
                 audioSrc = 'subsite/audio/coords-POWFU.mp3';
                 break;
-                case 'coords7':
-                    audioSrc = 'subsite/audio/coords-JUNNY21.mp3';
-                    break;
-                case 'coords8':
-                    audioSrc = 'subsite/audio/coords-JB.mp3';
-                    break;
-                case 'coords9':
-                    audioSrc = 'subsite/audio/coords-POWFU.mp3';
-                    break;
-                case 'coords10':
-                    audioSrc = 'subsite/audio/coords-FLUME.mp3';
-                    break;
-                case 'coords11':
-                    audioSrc = 'subsite/audio/coords-POWFU.mp3';
-                    break;
+            case 'coords7':
+                audioSrc = 'subsite/audio/coords-JUNNY21.mp3';
+                break;
+            case 'coords8':
+                audioSrc = 'subsite/audio/coords-JB.mp3';
+                break;
+            case 'coords9':
+                audioSrc = 'subsite/audio/coords-Always.mp3';
+                break;
+            case 'coords10':
+                audioSrc = 'subsite/audio/coords-FLUME.mp3';
+                break;
+            case 'coords11':
+                audioSrc = 'subsite/audio/coords-DEN.mp3';
+                break;
+            case 'coords12':
+                audioSrc = 'subsite/audio/coords-Jay.mp3';
+                break;
+            case 'coords13':
+                audioSrc = 'subsite/audio/coords-Nan.mp3';
+                break;
+            case 'coords14':
+                audioSrc = 'subsite/audio/coords-Hou.mp3';
+                break;
         }
 
         console.log("Selected audio source:", audioSrc); // Debugging line
@@ -132,31 +138,37 @@ $(document).ready(function(){
             // Ensure the audio context is not suspended
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume().then(() => {
-                    playAudioWithFadeIn(audioElement);
+                    playAudioWithFadeIn(audioElement, muffleLevel);
                 });
             } else {
-                playAudioWithFadeIn(audioElement);
+                playAudioWithFadeIn(audioElement, muffleLevel);
             }
 
             // Adjust the muffle based on the element's position
             muffleAudio(muffleLevel);
         }
 
-        function playAudioWithFadeIn(audioElement) {
+        function playAudioWithFadeIn(audioElement, muffleLevel) {
             audioElement.onloadedmetadata = function() {
                 audioElement.currentTime = Math.random() * audioElement.duration;
 
                 var gainNode = audioCtx.createGain();
+                
+                var maxGain = 1; // Maximum volume
+                var minGain = 0.1; // Minimum volume, adjust as needed
+                var gainValue = maxGain - ((maxGain - minGain) / 13) * (muffleLevel - 1);
+                
                 gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-                gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 1); // Fade in over 1 second
+                gainNode.gain.linearRampToValueAtTime(gainValue, audioCtx.currentTime + 1); // Fade in over 1 second
 
                 if (!audioSourceNode) {
                     audioSourceNode = audioCtx.createMediaElementSource(audioElement);
                 }
                 audioSourceNode.disconnect(); // Disconnect first to ensure clean state
-                audioSourceNode.connect(biquadFilter); // Connect the source to the biquad filter
+                audioSourceNode.connect(gainNode); // Connect the source to the gain node
+                gainNode.connect(biquadFilter); // Connect the gain node to the biquad filter
                 biquadFilter.connect(audioCtx.destination); // Connect the biquad filter to the destination
-                console.log("Audio source connected to biquad filter and destination."); // Debugging line
+                console.log("Audio source connected to gain node, biquad filter, and destination."); // Debugging line
 
                 audioElement.play().catch(e => console.error("Error playing audio:", e));
             };
@@ -254,13 +266,22 @@ $(document).ready(function(){
                 audioSrc = 'subsite/audio/coords-JB.mp3';
                 break;
             case 'coords9':
-                audioSrc = 'subsite/audio/coords-POWFU.mp3';
+                audioSrc = 'subsite/audio/coords-Always.mp3';
                 break;
             case 'coords10':
                 audioSrc = 'subsite/audio/coords-FLUME.mp3';
                 break;
             case 'coords11':
-                audioSrc = 'subsite/audio/coords-POWFU.mp3';
+                audioSrc = 'subsite/audio/coords-DEN.mp3';
+                break;
+            case 'coords12':
+                audioSrc = 'subsite/audio/coords-Jay.mp3';
+                break;
+            case 'coords13':
+                audioSrc = 'subsite/audio/coords-Nan.mp3';
+                break;
+            case 'coords14':
+                audioSrc = 'subsite/audio/coords-Hou.mp3';
                 break;
 
         }
@@ -274,31 +295,36 @@ $(document).ready(function(){
             // Ensure the audio context is not suspended
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume().then(() => {
-                    playAudioWithFadeIn(audioElement);
+                    playAudioWithFadeIn(audioElement, muffleLevel);
                 });
             } else {
-                playAudioWithFadeIn(audioElement);
+                playAudioWithFadeIn(audioElement, muffleLevel);
             }
 
             // Adjust the muffle based on the element's position
             muffleAudio(muffleLevel);
         }
 
-        function playAudioWithFadeIn(audioElement) {
+        function playAudioWithFadeIn(audioElement, muffleLevel) {
             audioElement.onloadedmetadata = function() {
                 audioElement.currentTime = Math.random() * audioElement.duration;
 
                 var gainNode = audioCtx.createGain();
+                var maxGain = 1; // Maximum volume
+                var minGain = 0.1; // Minimum volume, adjust as needed
+                var gainValue = maxGain - ((maxGain - minGain) / 13) * (muffleLevel - 1);
+                
                 gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-                gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 1); // Fade in over 1 second
+                gainNode.gain.linearRampToValueAtTime(gainValue, audioCtx.currentTime + 1); // Fade in over 1 second
 
                 if (!audioSourceNode) {
                     audioSourceNode = audioCtx.createMediaElementSource(audioElement);
                 }
                 audioSourceNode.disconnect(); // Disconnect first to ensure clean state
-                audioSourceNode.connect(biquadFilter); // Connect the source to the biquad filter
+                audioSourceNode.connect(gainNode); // Connect the source to the gain node
+                gainNode.connect(biquadFilter); // Connect the gain node to the biquad filter
                 biquadFilter.connect(audioCtx.destination); // Connect the biquad filter to the destination
-                console.log("Audio source connected to biquad filter and destination from inLinks."); // Debugging line
+                console.log("Audio source connected to gain node, biquad filter, and destination from inLinks."); // Debugging line
 
                 audioElement.play().catch(e => console.error("Error playing audio:", e));
             };
@@ -322,6 +348,16 @@ $(document).ready(function(){
         zoomAnimationThreshold: 20,
     }).addTo(map);
 
+    // Add click event listener for the mute button
+    $('#mute').click(function() {
+        var audioElement = document.getElementById('audio1');
+        if (audioElement.muted) {
+            audioElement.muted = false;
+            $(this).text('mute'); // Update button text to "mute"
+        } else {
+            audioElement.muted = true;
+            $(this).text('unmute'); // Update button text to "unmute"
+        }
+    });
+
   });
-
-

@@ -336,7 +336,7 @@ h2 {
 }
 
 .p11 img, .p11 p, .p12 img, .p12 p, .p13 img, .p13 p, .p14 img, .p14 p{
-    filter: blur(16px);
+    filter: blur(14px);
 }
 
 a.titleLink {
@@ -352,6 +352,25 @@ a.titleLink {
     height: 100vh;
     z-index: -10;
     background-color: black;
+}
+
+#mute {
+    margin-bottom: 2vh;
+    background: transparent;
+    color: red;
+
+
+    font-size: 10px;
+    font-weight: 700;
+    padding: 10px;
+    border: 2px solid red;
+
+}
+
+#mute:hover {
+    background: white;
+    color: red;
+    transition: all 0.5s ease;
 }
 
 
