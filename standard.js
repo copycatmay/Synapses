@@ -332,6 +332,20 @@ $(document).ready(function(){
         }
     });
 
+    document.querySelectorAll('a.inLinks').forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor click behavior
+        const targetHref = this.getAttribute('href');
+        const targetId = targetHref.substring(1); // Remove the '#' from the href
+        const targetElement = document.getElementById(targetId);
+
+        // Check if the target .latLong element is not visible and click it to open
+        if (targetElement && !$(targetElement).hasClass('clicked')) {
+          $(targetElement).click();
+        }
+      });
+    });
+
     // Function to update references text color
     function updateReferencesTextColor() {
       var hasBlackBox = $('.latLong.clicked').length > 0 || $('.inLinks.clicked').length > 0;
