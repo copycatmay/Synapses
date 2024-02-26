@@ -310,13 +310,14 @@ h2 {
     text-transform: uppercase;
     text-align: right;
 
-    margin-left: 8vw;
+    margin-left: 6vw;
     margin-bottom: 2vh;
     width: 50%;
 }
 
 .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10, .p11, .p12, .p13, .p14{
-    margin-right: 15px;
+    margin-right: 25px;
+    margin-bottom: 10px;
 }
 
 .p1 img, .p1 p {

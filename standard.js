@@ -196,6 +196,7 @@ $(document).ready(function(){
 
     // Smooth scrolling for inLinks
     $('a.inLinks').click(function(e) {
+
         e.preventDefault(); // Prevent default anchor behavior
 
         var targetHref = $(this).attr('href'); // Get the href attribute, e.g., #coords1
@@ -338,8 +339,12 @@ $(document).ready(function(){
       $('.relevantInfo').toggle(!hasBlackBox); // Hide or show .relavant-info
     }
 
-    // Initialize Leaflet Map
-    var map = L.map('mapid', {attributionControl: false}).setView([0, 0], 3);
+    // Initialize Leaflet Map without zoom controls
+    var map = L.map('mapid', {
+        attributionControl: false,
+        zoomControl: false, // Disable zoom controls
+    }).setView([35, -80], 3);
+
     L.tileLayer.provider('Stadia.StamenTonerBackground', {
         maxZoom: 20,
         attribution: '© OpenStreetMap contributors',
