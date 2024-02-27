@@ -67,7 +67,7 @@
     font-size: 0.6em; /* Adjust font size as needed */
     transition: all 0.5s ease;
     margin-bottom: 0.2em;
-    margin-left: 0.2em;
+    margin-left: 0.1em;
     
     letter-spacing: -1px;
     font-weight: lighter;
@@ -110,6 +110,12 @@
     color: red;
     background-color: white;
     padding: 2px;
+}
+
+.relevantInfo p {
+    font-size: 10px !important;
+    margin-right: 20vw;
+    width: 40%;
 }
 
 a:visited {
@@ -219,6 +225,8 @@ h2 {
 .rightSideBar a {
     text-decoration: none;
     color: red; 
+
+    filter: blur(1px);
 }
 
 .rightSideBar a:hover {
@@ -226,6 +234,8 @@ h2 {
     color: white; 
 
     background-color: red;
+
+    filter: blur(0px) !important;
 }
 
 /* Misc Styling */
@@ -241,11 +251,7 @@ h2 {
 }
 
 .recentlyClickedLatLong {
-    border: 6px solid red; 
-}
-
-.recentlyClickedID {
-    border: 6px solid red; 
+    border-left: 1.2vw solid red;
 }
 
 .recentlyClickedID img, .recentlyClickedID p {
