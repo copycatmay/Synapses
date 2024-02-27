@@ -154,6 +154,13 @@ h2 {
     gap: 0px;
     max-height: 75vh;
     overflow: auto;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.metadata::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .metadata div{
@@ -379,4 +386,12 @@ a.titleLink {
     transition: all 0.5s ease;
 }
 
-/* make these guys more and more blurry as it goes on */
+body {
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
