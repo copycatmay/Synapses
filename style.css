@@ -313,7 +313,7 @@ h2 {
 
 
 .imgMeta {
-    font-weight: 300;
+    font-weight: 400;
     color: #ffffff;
     font-size: 10px !important;
 
@@ -321,9 +321,10 @@ h2 {
 
     text-transform: uppercase;
     text-align: right;
+    letter-spacing: -0.05em;
 
-    margin-left: 6vw;
-    margin-bottom: 2vh;
+    margin-left: 8vw;
+    margin-bottom: 5vh;
     width: 50%;
 }
 
